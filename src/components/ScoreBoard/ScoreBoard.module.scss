@@ -1,0 +1,65 @@
+.scoretable{
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-right: 300px;
+}
+
+.title {
+    text-align: center;
+    font-size: 40px;
+}
+
+.table {
+    letter-spacing: 1px;
+    border: 5px solid #bbada0;
+    border-radius: 3%;
+    text-align: center;
+    padding: 10px;
+    border-collapse: separate;
+    border-spacing: 0px 5px;
+}
+
+// .table th {
+//     font-size: 40px;
+//     border: 5px solid #bbada0;
+//     background-color: #bbada0;
+//     // border-radius: 10px;
+// }
+
+// .table thead{
+//     border: 5px solid #bbada0;
+//     border-radius: 50px;
+//     background-color: #bbada0;
+
+// }
+
+.table td {
+    font-size: 25px;
+    padding-left: 10px;
+}
+
+.tableHeader {
+  background-color: #cec3b9; 
+    display: flex;
+    justify-content: space-between;
+  border-radius: 10px;
+  border: 5px solid #cec3b9;
+  font-size: 35px;
+}
+
+.tableData {
+    display: flex;
+    justify-content: space-between;
+    font-size: 22px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color:#efeae4; 
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.tableRow :hover {
+    background-color:#d2c9bf;
+}

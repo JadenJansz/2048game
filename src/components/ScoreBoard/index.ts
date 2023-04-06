@@ -1,0 +1,1 @@
+export { ScoreBoard as default } from './ScoreBoard';
