@@ -8,7 +8,7 @@ const useStateReducer = (prevState, newState) => {
 
 const getInitialValue = (key: string, defaultValue: any) => {
   try {
-    const gameState = JSON.parse(window.localStorage.getItem(GAME_ID));
+    const gameState = JSON.parse(window?.localStorage.getItem(GAME_ID));
     const value = gameState?.[key];
     return value ?? defaultValue;
   } catch (error) {
@@ -28,9 +28,9 @@ function useGameLocalStorage<T>(
   );
 
   useEffect(() => {
-    let state = JSON.parse(window.localStorage.getItem(GAME_ID)) || {};
+    let state = JSON.parse(window?.localStorage.getItem(GAME_ID)) || {};
     state[key] = value;
-    window.localStorage.setItem(GAME_ID, JSON.stringify(state));
+    window?.localStorage.setItem(GAME_ID, JSON.stringify(state));
   }, [value, key]);
 
   return [value, dispatch];

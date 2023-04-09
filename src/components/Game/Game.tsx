@@ -116,7 +116,7 @@ const Game = () => {
       <div className="container">
         <div className="gameContainer">
           <GameHeader />
-          <Board />
+          {/* <Board /> */}
         </div>
         <GameFooter />
       </div>

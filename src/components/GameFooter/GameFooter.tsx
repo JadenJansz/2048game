@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { isMobile } from "../../utils/utils";
 import { SectionProps } from "./Interfaces";
 
@@ -13,9 +13,15 @@ const Section = (props: SectionProps) => {
 };
 
 const GameRules = () => {
-  const text = isMobile(navigator.userAgent || navigator.vendor)
-    ? "Swipe with your fingers to move the numbers."
-    : "Use your arrow keys to move the numbers.";
+  const [text, setText] = useState('');
+  useEffect(() => {
+
+    const text = isMobile(navigator.userAgent || navigator.vendor)
+      ? "Swipe with your fingers to move the numbers."
+      : "Use your arrow keys to move the numbers.";
+
+      setText(text);
+  }, [])
 
   return (
     <Section

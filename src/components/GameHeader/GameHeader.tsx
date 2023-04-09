@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../Button";
 import { useGameContext } from "../Game";
+// import { useGameContext } from "@/hooks/useGameContext";
 import ScoresContainer from "../ScoresContainer";
 
 import "./GameHeader.module.scss";
