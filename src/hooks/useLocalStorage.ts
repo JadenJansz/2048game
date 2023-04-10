@@ -32,7 +32,6 @@ function useGameLocalStorage<T>(
     state[key] = value;
     window?.localStorage.setItem(GAME_ID, JSON.stringify(state));
   }, [value, key]);
-
   return [value, dispatch];
 }
 

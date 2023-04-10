@@ -1,18 +1,21 @@
 import React from "react";
 import Button from "../Button";
-import { useGameContext } from "../Game";
+// import { useGameContext } from "../Game";
+
+import styles from "./Board.module.scss";
+import { useGameContext } from "@/hooks/useGameContext";
 import { GameStatus, Tile } from "../interfaces";
 
 const DATA = {
   WIN: {
     message: "Congratulations! You Win!",
     buttonText: "Play again",
-    containerClass: "gameResultWin",
+    containerClass: styles.gameResultWin,
   },
   GAME_OVER: {
     message: "Game Over!",
     buttonText: "Try again",
-    containerClass: "gameResultLose",
+    containerClass: styles.gameResultLose,
   },
 };
 
@@ -28,11 +31,11 @@ const Result = (props: {
     isWin || playAfterWin ? DATA.WIN : DATA.GAME_OVER;
 
   return (
-    <div className={`gameResult ${containerClass}`}>
+    <div className={`${styles.gameResult} ${containerClass}`}>
       <p>{message}</p>
       <div>
         {isWin && (
-          <Button className="continueButton" onClick={() => onContinue()}>
+          <Button className={styles.continueButton} onClick={() => onContinue()}>
             Continue
           </Button>
         )}

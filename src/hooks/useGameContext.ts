@@ -1,10 +1,9 @@
+import { GameContext } from "@/components/Game/Game";
 import { IGameContext } from "@/components/interfaces";
 import React from "react";
 import { useContext } from "react";
 
 function useGameContext() {
-
-    const GameContext = React.createContext<IGameContext>(null);
     
     const context = useContext(GameContext);
     if (context === undefined) {

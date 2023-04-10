@@ -1,14 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
 import { Game } from '@/components/Game/Game'
 import { ScoreBoard } from '@/components/ScoreBoard/ScoreBoard'
 import { GetServerSideProps } from 'next'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props)
   return (
     <>
       <Head>
@@ -18,7 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Game />
-      {/* <ScoreBoard /> */}
+      <ScoreBoard />
     </>
   )
 }

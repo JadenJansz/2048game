@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Board from "../Board";
 
-import "./Game.module.scss";
+import styles from "./Game.module.scss";
 import {
   areEqual,
   createRandomTile,
@@ -24,7 +24,7 @@ import GameFooter from "../GameFooter";
 import useGameLocalStorage from "../../hooks/useLocalStorage";
 import { KEYBOARD_ARROW_TO_DIRECTION_MAP } from "../../constants/constants";
 
-const GameContext = React.createContext<IGameContext>(null);
+export const GameContext = React.createContext<IGameContext>(null);
 
 const getGameStatus = (tiles: Tile[]): GameStatus => {
   if (isGameOver(tiles)) {
@@ -102,7 +102,6 @@ const GameProvider = (props) => {
       document.removeEventListener("keydown", handleKeyPress);
     };
   }, [dispatch]);
-
   return (
     <GameContext.Provider value={{ gameState: state, dispatch }}>
       {props.children}
@@ -113,10 +112,10 @@ const GameProvider = (props) => {
 const Game = () => {
   return (
     <GameProvider>
-      <div className="container">
-        <div className="gameContainer">
+      <div className={styles.container}>
+        <div className={styles.gameContainer}>
           <GameHeader />
-          {/* <Board /> */}
+          <Board />
         </div>
         <GameFooter />
       </div>
@@ -124,12 +123,13 @@ const Game = () => {
   );
 };
 
-function useGameContext() {
-  const context = useContext(GameContext);
-  if (context === undefined) {
-    throw new Error("useGameContext must be used within a GameContextProvider");
-  }
-  return context;
-}
+// function useGameContext() {
+//   console.log("lol")
+//   const context = useContext(GameContext);
+//   if (context === undefined) {
+//     throw new Error("useGameContext must be used within a GameContextProvider");
+//   }
+//   return context;
+// }
 
-export { Game, useGameContext };
+export { Game };

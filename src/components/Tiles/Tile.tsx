@@ -1,7 +1,7 @@
 import React, { memo } from "react";
 import { TileType, Value } from "../interfaces";
 
-import "./Tile.module.scss";
+import styles from "./Tile.module.scss";
 
 interface TileProps {
   value: Value;
@@ -11,13 +11,13 @@ interface TileProps {
 }
 
 const Tile = memo((props: TileProps) => {
-
+console.log(props.value)
   return (
     <div
-      className={`tile tile-${props.value}`}
+      className={`${styles.tile} ${styles.tile}-${props.value}`}
       style={{ transform: `translate(${props.x}px, ${props.y}px)` }}
     >
-      <div className={`tileInner ${props.type}`}>{props.value}</div>
+      <div className={`${styles.tileInner} ${props.type}`}>{props.value}</div>
     </div>
   );
 });

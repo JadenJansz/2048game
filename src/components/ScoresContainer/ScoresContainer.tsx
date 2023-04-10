@@ -1,15 +1,18 @@
 import React, { useEffect } from "react";
 import useGameLocalStorage from "../../hooks/useLocalStorage";
 import { getMaxId } from "../../utils/boardUtils";
-import { useGameContext } from "../Game/Game";
+import { useGameContext } from "@/hooks/useGameContext";
+// import { useGameContext } from "../Game";
 import { Tile } from "../interfaces";
 import ScoreBox from "../ScoreBox";
 import { ACTIONTYPE, ScoresState } from "./Interfaces";
 
-import "./ScoresContainer.module.scss";
+import styles from "./ScoresContainer.module.scss";
 
 export const ScoresContainer = () => {
   const { gameState } = useGameContext();
+  // const context = useGameContext();
+  // const { gameState } = context || {};
 
   const [state, dispatch] = useGameLocalStorage(
     "scores",
@@ -31,13 +34,13 @@ export const ScoresContainer = () => {
   }, [state]);
 
   return (
-    <div className="scoresContainer">
+    <div className={styles.scoresContainer}>
       <div style={{ position: "relative" }}>
-        <ScoreBox title="SCORE" score={state.score} />
-        <div className="addScore" id="additionScore"></div>
+        {/* <ScoreBox title="SCORE" score={state.score} /> */}
+        <div className={styles.addScore} id="additionScore"></div>
       </div>
-
-      <ScoreBox title="BEST" score={state.bestScore} />
+      
+      {/* <ScoreBox title="BEST" score={state.bestScore} /> */}
     </div>
   );
 };
@@ -59,7 +62,6 @@ const stateReducer = (state: ScoresState, action: ACTIONTYPE) => {
   switch (action.type) {
     case "change": {
       const tiles = action.payload;
-
       // handles page refresh
       if (
         state.tiles.length === tiles.length &&

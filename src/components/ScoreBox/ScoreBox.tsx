@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import React from "react";
 
-import "./ScoreBox.module.scss";
+import styles from "./ScoreBox.module.scss";
 
 interface ScoreBoxProps {
   title: string;
@@ -10,9 +10,9 @@ interface ScoreBoxProps {
 
 export const ScoreBox = (props: ScoreBoxProps) => {
   console.log(props)
-  return <div className="scoreBox">
-    <span className="title">{props.title}</span>
-    <span className="score">{props.score}</span>
+  return <div className={styles.scoreBox}>
+    <span className={styles.title}>{props.title}</span>
+    <span className={styles.score}>{props.score}</span>
   </div>
 }
 

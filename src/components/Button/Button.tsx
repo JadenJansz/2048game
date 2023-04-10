@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Button.module.scss";
+import styles from "./Button.module.scss";
 
 interface ButtonProps {
   id?: string;
@@ -15,7 +15,7 @@ export const Button = (props: ButtonProps) => {
   return (
     <button
       id={id}
-      className={`appButton ${className || ""}`}
+      className={`${styles.appButton} ${className || ""}`}
       onClick={onClick}
     >
       {children}

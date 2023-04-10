@@ -17,9 +17,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
     const title = "High Score";
     const score = 100;
     return {
-      props: {
-        title: title,
-        score: score,
-      },
+      props: {},
     };
 };

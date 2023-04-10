@@ -3,7 +3,7 @@ import { ScreenSizeBreakpoint, TilesScreenTransformFactor } from "../../constant
 import { Tile, TransformFactor } from "../interfaces";
 import {default as BoardTile} from "./Tile";
 
-import "./TilesList.module.scss";
+import styles from "./TilesList.module.scss";
 
 const TilesList = (props: { tiles: Tile[], factor: number }) => {
   return (
@@ -37,7 +37,7 @@ export const TileContainer = (props: { tiles: Tile[] }) => {
 
   const sortedTiles = props.tiles.sort((t1, t2) => t1.id - t2.id);
   return (
-    <div className="tileContainer">
+    <div className={styles.tileContainer}>
       <TilesList tiles={sortedTiles} factor={factor}/>
     </div>
   );

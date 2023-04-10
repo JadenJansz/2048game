@@ -1,10 +1,10 @@
 import React, { useEffect, useReducer } from "react";
 import { MOVES_MAP } from "../../utils/boardUtils";
-import { useGameContext } from "../Game/Game";
+// import { useGameContext } from "../Game/Game";
+import { useGameContext } from "@/hooks/useGameContext";
 import { GameState } from "../interfaces";
 import Board from "./Board";
 
-import "./Board.module.scss";
 import { BoardActionType, BoardState } from "./Interfaces";
 
 export const BoardProvider = () => {

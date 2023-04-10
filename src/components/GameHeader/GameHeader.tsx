@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../Button";
-import { useGameContext } from "../Game";
-// import { useGameContext } from "@/hooks/useGameContext";
+// import { useGameContext } from "../Game";
+import { useGameContext } from "@/hooks/useGameContext";
 import ScoresContainer from "../ScoresContainer";
 
-import "./GameHeader.module.scss";
+import styles from "./GameHeader.module.scss";
 
-const GameTitle = () => <span className="gameTitle">2048</span>;
+const GameTitle = () => <span className={styles.gameTitle}>2048</span>;
 
 const GameDescription = () => {
   return (
@@ -22,12 +22,12 @@ export const GameHeader = () => {
   const { dispatch } = useGameContext();
 
   return (
-    <div className="header">
-      <div className="gameIntro">
+    <div className={styles.header}>
+      <div className={styles.gameIntro}>
         <GameTitle />
         <GameDescription />
       </div>
-      <div className="actions">
+      <div className={styles.actions}>
         <ScoresContainer />
         <Button
           id="restartGameBtn"

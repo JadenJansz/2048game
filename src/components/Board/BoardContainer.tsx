@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { useGameContext } from "../Game";
+// import { useGameContext } from "../Game";
+import { useGameContext } from "@/hooks/useGameContext";
 import { BoardProvider } from "./BoardProvider";
 
 let startClientX = null;

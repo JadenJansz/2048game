@@ -1,6 +1,6 @@
 import Game from '@/components/Game'
 import ScoreBoard from '@/components/ScoreBoard'
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 import { GetServerSideProps } from 'next'
 import type { AppProps } from 'next/app'
 

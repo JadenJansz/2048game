@@ -1,5 +1,5 @@
 import React from 'react'
-import "./ScoreBoard.module.scss";
+import styles from "./ScoreBoard.module.scss";
 
 export const ScoreBoard = () => {
 
@@ -19,18 +19,18 @@ export const ScoreBoard = () => {
       console.log(data.length)
 
   return (
-    <div className='scoretable'>
-      <h1 className='title'>LeaderBoard</h1>
+    <div className={styles.scoretable}>
+      <h1 className={styles.title}>LeaderBoard</h1>
         {
           data.length ? (
-            <div className='table'>
-                <div className='tableHeader' >
+            <div className={styles.table}>
+                <div className={styles.tableHeader} >
                   <label style={{ paddingLeft: '25px' }}>Name</label>
                   <label style={{ paddingRight: '25px' }}>Score</label>
                 </div>
-                <div className='tableRow'>
+                <div className={styles.tableRow}>
                   {data.map((row, index) => (
-                    <div className='tableData' key={index}>
+                    <div className={styles.tableData} key={index}>
                       <label>{row.name}</label>
                       <label style={{ textAlign: 'end', marginLeft: '80px' }}>{row.score}</label>
                     </div>
