@@ -16,8 +16,6 @@ export const ScoreBoard = () => {
         { name: 'Linda', score: 23124 }
       ];
 
-      console.log(data.length)
-
   return (
     <div className={styles.scoretable}>
       <h1 className={styles.title}>LeaderBoard</h1>

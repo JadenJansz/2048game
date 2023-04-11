@@ -3,14 +3,14 @@ import React, { useEffect } from "react";
 import { useGameContext } from "@/hooks/useGameContext";
 import { BoardProvider } from "./BoardProvider";
 
-let startClientX = null;
-let startClientY = null;
+let startClientX: number | null = null;
+let startClientY: number | null = null;
 
 export const BoardContainer = () => {
   const { dispatch } = useGameContext();
 
   useEffect(() => {
-    function handleTouchStart(event) {
+    function handleTouchStart(event: { touches: string | any[]; }) {
       if (event.touches.length === 1) {
         const startTouch = event.touches[0];
         startClientX = startTouch.clientX;
@@ -18,7 +18,7 @@ export const BoardContainer = () => {
       }
     }
 
-    function handleTouchEnd(event) {
+    function handleTouchEnd(event: { touches: string | any[]; changedTouches: any[]; }) {
       if (!startClientX || !startClientY || event.touches.length > 0) {
         return;
       }
@@ -53,12 +53,12 @@ export const BoardContainer = () => {
     }
 
     const boardContainer = document.getElementById("boardContainer");
-    boardContainer.addEventListener("touchstart", handleTouchStart);
-    boardContainer.addEventListener('touchend', handleTouchEnd);
+    boardContainer?.addEventListener("touchstart", handleTouchStart);
+    boardContainer?.addEventListener('touchend', handleTouchEnd);
 
     return () => {
-      boardContainer.removeEventListener("touchstart", handleTouchStart);
-      boardContainer.removeEventListener("touchend", handleTouchEnd);
+      boardContainer?.removeEventListener("touchstart", handleTouchStart);
+      boardContainer?.removeEventListener("touchend", handleTouchEnd);
     };
   }, [dispatch]);
 

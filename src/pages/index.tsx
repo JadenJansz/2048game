@@ -5,11 +5,11 @@ import styles from '@/styles/Home.module.scss'
 import { Game } from '@/components/Game/Game'
 import { ScoreBoard } from '@/components/ScoreBoard/ScoreBoard'
 import { GetServerSideProps } from 'next'
+import dynamic from 'next/dynamic'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home(props) {
-  console.log(props)
+export default function Home() {
   return (
     <>
       <Head>
@@ -27,6 +27,8 @@ export default function Home(props) {
 export const getServerSideProps: GetServerSideProps = async () => {
   const title = "High Score";
   const score = 100;
+
+  
   return {
     props: {
       title: title,

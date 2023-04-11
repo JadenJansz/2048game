@@ -1,7 +1,8 @@
 import { GetServerSideProps } from "next";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import styles from "./ScoreBox.module.scss";
+const GAME_ID = "2048game";
 
 interface ScoreBoxProps {
   title: string;
@@ -9,21 +10,17 @@ interface ScoreBoxProps {
 }
 
 export const ScoreBox = (props: ScoreBoxProps) => {
-  console.log(props)
+
+  const [score, setScore] = useState({});
+
+  useEffect(() => {
+    setScore(props)
+  }, [props])
+
   return <div className={styles.scoreBox}>
-    <span className={styles.title}>{props.title}</span>
-    <span className={styles.score}>{props.score}</span>
+    <span className={styles.title}>{score?.title}</span>
+    <span className={styles.score}>{score?.score}</span>
   </div>
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const title = "High Score";
-  const score = 100;
-  return {
-    props: {
-      title,
-      score,
-    },
-  };
-};
 

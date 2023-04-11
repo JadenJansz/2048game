@@ -31,6 +31,7 @@ export const GameHeader = () => {
         <ScoresContainer />
         <Button
           id="restartGameBtn"
+          className={styles.restartGameBtn}
           onClick={(_) => dispatch({ type: "restart" })}
         >
           New Game

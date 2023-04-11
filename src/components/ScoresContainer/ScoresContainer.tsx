@@ -36,11 +36,11 @@ export const ScoresContainer = () => {
   return (
     <div className={styles.scoresContainer}>
       <div style={{ position: "relative" }}>
-        {/* <ScoreBox title="SCORE" score={state.score} /> */}
+        <ScoreBox title="SCORE" score={state.score} />
         <div className={styles.addScore} id="additionScore"></div>
       </div>
       
-      {/* <ScoreBox title="BEST" score={state.bestScore} /> */}
+      <ScoreBox title="BEST" score={state.bestScore} />
     </div>
   );
 };

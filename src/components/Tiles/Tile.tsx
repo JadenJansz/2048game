@@ -11,10 +11,10 @@ interface TileProps {
 }
 
 const Tile = memo((props: TileProps) => {
-console.log(props.value)
+
   return (
     <div
-      className={`${styles.tile} ${styles.tile}-${props.value}`}
+      className={`${styles.tile} ${styles[`tile-${props.value}`]}`}
       style={{ transform: `translate(${props.x}px, ${props.y}px)` }}
     >
       <div className={`${styles.tileInner} ${props.type}`}>{props.value}</div>
